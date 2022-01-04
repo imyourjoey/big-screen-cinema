@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Screen - Movie / Now Showing</title>
+    <link rel="stylesheet" href="dist/bootstrap-4.6.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="dist/bootstrap-icons-1.7.2/bootstrap-icons.css" />
+    <link rel="stylesheet" href="dist/fontawesome-5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="dist/swiper-7.4.1/css/swiper-bundle.min.css" />
+    <script src="dist/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+    <script src="dist/popper-2.11.0/popper.min.js"></script>
+    <script src="dist/bootstrap-4.6.1/js/bootstrap.min.js"></script>
+    <script src="dist/swiper-7.4.1/js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/movie-now-showing.css" />
+</head>
+<body>
+    <div id="menu-navbar" class="fixed-top">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="index.html" id="logo" class="font-weight-bold text-decoration-none text-white py-2 user-select-none"><span class="logo-yellow">Big</span> Screen</a>
+                <div id="menu" class="d-lg-flex align-items-center">
+                    <a href="index.html" class="menu-nav-hover text-decoration-none py-2 px-4 user-select-none">Home</a>
+                    <a href="movie-now-showing.html" class="menu-nav-hover text-decoration-none py-2 px-4 user-select-none">Movie / Now Showing</a>
+                    <a href="promotions.html" class="menu-nav-hover text-decoration-none py-2 px-4 user-select-none">Promotions</a>
+                    <div id="has-sub-menu" class="position-relative has-sub-menu">
+                        <a class="text-decoration-none user-select-none">
+                            <div id="expand-sub-menu" class="sub-menu-btn menu-nav-hover py-2 px-4">Help <i id="sub-menu-arrow-position" class="bi bi-chevron-down d-lg-none"></i></div>
+                        </a>
+                        <div id="sub-menu" class="sub-menu">
+                            <a href="about.html" class="text-decoration-none user-select-none">
+                                <div class="menu-nav-sub-menu-hover py-2 px-4">About Us</div>
+                            </a>
+                            <a href="feedback.html" class="text-decoration-none user-select-none">
+                                <div class="menu-nav-sub-menu-hover py-2 px-4">Feedback</div>
+                            </a>
+                            <a href="privacy-policy.html" class="text-decoration-none user-select-none">
+                                <div class="menu-nav-sub-menu-hover py-2 px-4">Privacy Policy</div>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="login.html" class="menu-nav-hover text-decoration-none py-2 px-4 user-select-none">Login</a>
+                </div>
+                <i id="mobile-nav" class="bi bi-list menu-nav-hover user-select-none d-lg-none py-2 px-4"></i>
+            </div>
+        </div>
+    </div>
+    <div id="first-content">
+        <form action="./ticket.html" method="get" onsubmit="return checkAllValidation()">
+            <div class="py-2">
+                <div class="select-title select-title-height">
+                    <div class="container">
+                        <label class="mb-0 select-title-label-height text-white">Select Date</label>
+                    </div>
+                </div>
+            </div>
+            <div class="py-3">
+                <div class="container">
+                    <div id="dateSelect" class="d-flex flex-column flex-md-row">
+                        <div class="d-flex justify-content-center align-items-center flex-column user-select-none mr-md-5">
+                            <span class="weekday-name text-white d-block text-center mb-3">Sunday</span>
+                            <div class="date-circle border text-center d-flex justify-content-center align-items-center">
+                                <span>1</span>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center flex-column user-select-none mr-md-5">
+                            <span class="weekday-name text-white d-block text-center mb-3">Monday</span>
+                            <div class="date-circle border text-center d-flex justify-content-center align-items-center">
+                                <span>2</span>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center flex-column user-select-none mr-md-5">
+                            <span class="weekday-name text-white d-block text-center mb-3">Tuesday</span>
+                            <div class="date-circle border text-center d-flex justify-content-center align-items-center">
+                                <span>3</span>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center flex-column user-select-none mr-md-5">
+                            <span class="weekday-name text-white d-block text-center mb-3">Wednesday</span>
+                            <div class="date-circle border text-center d-flex justify-content-center align-items-center">
+                                <span>4</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="py-2">
+                <div class="select-title select-title-height">
+                    <div class="container">
+                        <label class="mb-0 select-title-label-height text-white">Select Movie</label>
+                    </div>
+                </div>
+            </div>
+            <div class="py-3">
+                <div class="container">
+                    <div id="swiper1" class="swiper mySwiper user-select-none">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"></div>
+                            <div class="swiper-slide"></div>
+                            <div class="swiper-slide"></div>
+                            <div class="swiper-slide"></div>
+                            <div class="swiper-slide"></div>
+                            <div class="swiper-slide"></div>
+                            <div class="swiper-slide"></div>
+                            <div class="swiper-slide"></div>
+                        </div>
+                        <div class="swiper-button-next text-white"></div>
+                        <div class="swiper-button-prev text-white"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="py-2">
+                <div class="select-title select-title-height">
+                    <div class="container">
+                        <label class="mb-0 select-title-label-height text-white">Movie Description</label>
+                    </div>
+                </div>
+            </div>
+            <div class="py-3">
+                <div class="container">
+                    <div id="movie-description" class="text-white">
+
+                    </div>
+                </div>
+            </div>
+            <div class="py-2">
+                <div class="select-title select-title-height">
+                    <div class="container">
+                        <label class="mb-0 select-title-label-height text-white">Select Time</label>
+                    </div>
+                </div>
+            </div>
+            <div class="py-3">
+                <div class="container">
+                    <div class="text-white">
+                        <div id="time" class="row">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-100">
+                <div style="display: none;" id="masking" class="position-fixed"></div>
+                <div style="display: none;" id="popup" class="seat-container p-3 border position-fixed">
+                    <div class="close-popup">
+                        <div class="d-flex justify-content-end align-items-center">
+                            <i id="close-times" class="far fa-times-circle"></i>
+                        </div>
+                    </div>
+                    <div class="cinema-hall-screen mb-5">
+                        <div id="screen" class="w-100">
+                            <h4 class="text-white text-center text-uppercase user-select-none">Screen</h4>
+                        </div>
+                    </div>
+                    <div id="seat" class="select-seat-container">
+                        
+                    </div>
+                </div>
+                <div style="display: none;" id="confirm-seat" class="position-fixed">
+                    <div class="bg-light">
+                        <button type="submit" id="confirm-button" class="btn btn-block text-center text-uppercase">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="bg-darkgrey w-100 user-select-none border-top border-bottom border-secondary footer-font">
+        <div class="py-5">
+            <div class="container-fluid">
+                <div class="px-5">
+                    <div class="row align-items-center text-white">
+                        <div class="col-12 col-lg-4">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="movie-now-showing.html" class="text-decoration-none text-center text-white font-weight-bold mb-3">Movie / Now Showing</a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="promotions.html" class="text-decoration-none text-center text-white font-weight-bold mb-3">Promotions</a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <div class="d-flex justify-content-center align-items-center flex-column">
+                                <p class="font-weight-bold text-center">Help <i class="bi bi-chevron-down d-lg-none"></i></p>
+                                <a href="about.html" class="text-decoration-none text-center text-white mb-3">About Us</a>
+                                <a href="feedback.html" class="text-decoration-none text-center text-white mb-3">Feedback</a>
+                                <a href="privacy-policy.html" class="text-decoration-none text-center text-white mb-3">Privacy Policy</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-darkgrey w-100 user-select-none border-bottom border-dark footer-font">
+        <div class="py-3">
+            <div class="container-fluid">
+                <div class="px-5">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <p class="mb-0 text-center text-white font-weight-bold mr-3">Connect With Us :</p>
+                        <a href="https://www.facebook.com" target="_blank" class="text-decoration-none text-center text-white mr-3">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" class="text-decoration-none text-center text-white mr-3">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function checkAllValidation() {
+            var flag = false;
+
+            var date_validate = $("input[type=\"radio\"][name=\"date\"]:checked").val();
+            var movie_index_validate = $("input[type=\"radio\"][name=\"movie_index\"]:checked").val();
+            var time_validate = $("input[type=\"radio\"][name=\"time\"]:checked").val();
+            var seat_validate = [];
+            $("input[type=\"checkbox\"][name=\"seat[]\"]:checked").each(function (index, elem) {
+                seat_validate.push($(this).val());
+            });
+            if (date_validate != null && date_validate != undefined) {
+                if (movie_index_validate != null && movie_index_validate != undefined) {
+                    if (time_validate != null && time_validate != undefined) {
+                        if (seat_validate != null && seat_validate != undefined && seat_validate.length > 0) {
+                            localStorage.setItem("date", date_validate);
+                            localStorage.setItem("movie_index", movie_index_validate);
+                            localStorage.setItem("time", time_validate);
+                            localStorage.setItem("seat", seat_validate);
+                            flag = true;
+                        }
+                    }
+                }
+            }
+            return flag;
+        }
+        $(document).ready(function () {
+            // Start of Menu Navigation Bar
+            $("#mobile-nav").click(function () {
+                if ($(this).hasClass("bi-list")) {
+                    $("#logo").addClass("position-relative");
+                    $("#logo").css("z-index", "10000");
+                    $("#menu").addClass("mobile-open-menu");
+                    $(this).removeClass("bi-list");
+                    $(this).addClass("bi-x-square position-relative");
+                    $(this).css("z-index", "10000");
+                }
+                else {
+                    $("#logo").removeClass("position-relative");
+                    $("#logo").css("z-index", "0");
+                    $("#menu").removeClass("mobile-open-menu");
+                    $(this).addClass("bi-list");
+                    $(this).removeClass("bi-x-square position-relative");
+                    $(this).css("z-index", "0");
+                }
+            });
+
+            $("#expand-sub-menu").click(function () {
+                $("#sub-menu").toggleClass("sub-menu-expanded");
+            });
+            // End of Menu Navigation Bar
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            var movies = null;
+            var swiper1 = null;
+
+            function loadSelectMovies() {
+                if (movies != null && movies.length > 0) {
+                    $(".swiper-wrapper").html("");
+                    for (var i = 0; i < movies.length; i++) {
+                        var slideShowHTML = "";
+                        slideShowHTML += "<div class=\"swiper-slide\">";
+                        slideShowHTML += "<img src=\"" + movies[i].poster + "\" class=\"w-100 mb-2\" alt=\"" + movies[i].name + "\">";
+                        slideShowHTML += "<p class=\"mb-0 text-center text-white\">" + movies[i].name + "</p>";
+                        slideShowHTML += "<input type=\"radio\" class=\"d-none movieSelectRadio\" name=\"movie_index\" value=\"" + i + "\">";
+                        slideShowHTML += "</div>";
+                        $(".swiper-wrapper").append(slideShowHTML);
+                    }
+                    swiper1 = new Swiper("#swiper1", {
+                        effect: "coverflow",
+                        grabCursor: true,
+                        navigation: {
+                            nextEl: ".swiper-button-next",
+                            prevEl: ".swiper-button-prev",
+                        },
+                        slidesPerView: 2,
+                        spaceBetween: 30,
+                        centeredSlides: true,
+                        breakpoints: {
+                            767: {
+                                slidesPerView: 3,
+                                spaceBetween: 30,
+                            },
+                            992: {
+                                slidesPerView: 3.5,
+                                spaceBetween: 30,
+                            }
+                        },
+                        coverflowEffect: {
+                            rotate: 25,
+                            stretch: 0,
+                            depth: 100,
+                            modifier: 1,
+                            slideShadows: true,
+                        },
+                    });
+                    $(".movieSelectRadio").each(function(index,ele){
+                        if ($(ele).val() == 0) {
+                            $(ele).attr("checked", "true");
+                        }
+                    });
+                }
+            }
+
+            $.ajax({
+                url: "./json/movies.json",
+                type: "GET",
+                dataType: "json",
+                success: function(data) {
+                    movies = data.data;
+                    loadSelectMovies();
+                    loadMovieDesc();
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log(jqXHR);
+                    console.log(textStatus);
+                    console.log(errorThrown);
+                }
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            var user_select_date = null;
+
+            function loadMovieDesc() {
+                if (movies != null && swiper1 != null) {
+                    var moviesIndex = swiper1.activeIndex;
+                    var moviesInfo = movies[moviesIndex];
+                    var movie_desc_html = "<h4 class=\"text-break text-justify\">" + moviesInfo.name + "</h4>";
+                    movie_desc_html += "<p class=\"text-break text-justify\">Directed by : " + moviesInfo.directed_by + "</p>";
+                    movie_desc_html += "<p class=\"text-break text-justify\">Actors : " + moviesInfo.actors.join(", ") + "</p>";
+                    movie_desc_html += "<p class=\"text-break text-justify\">Release Date : " + moviesInfo.release_date + "</p>";
+                    movie_desc_html += "<p class=\"text-break text-justify\">Types : " + moviesInfo.movieType + "</p>";
+                    movie_desc_html += "<p class=\"text-break text-justify\">Language : " + moviesInfo.movieLanguege + "</p>";
+                    movie_desc_html += "<p class=\"text-break text-justify\">Classification : " + moviesInfo.movieClassification + "</p>";
+                    movie_desc_html += "<p class=\"text-break text-justify\">Running Time : " + moviesInfo.running_time + " minutes</p>";
+                    movie_desc_html += "<p class=\"text-break text-justify\">Description : " + moviesInfo.movieDescription + "</p>";
+                    $("#movie-description").html(movie_desc_html);
+                }
+            }
+
+            function loadMovieTime() {
+                if (user_select_date != null && movies != null && swiper1 != null) {
+                    var movies_index = swiper1.activeIndex;
+                    var user_date = new Date((user_select_date + "T00:00:00Z"));
+                    $("#time").html("");
+                    var movies_time = movies[movies_index].show_time;
+                    var time_should_show = new Date(movies_time[(user_date.getDate()%4)].time);
+                    var time_html = "<div class=\"col-4 col-md-3 col-lg-2\">";
+                    time_html += "<label for=\"" + ("0" + time_should_show.getHours().toString()).substr(-2) + ":" + ("0" + time_should_show.getMinutes().toString()).substr(-2) + "\" class=\"d-flex justify-content-center align-items-center flex-column p-1 border rounded time-select user-select-none mb-0\">";
+                    time_html += "<span class=\"\">" + ("0" + time_should_show.getHours().toString()).substr(-2) + ":" + ("0" + time_should_show.getMinutes().toString()).substr(-2) + "</span>";
+                    time_html += "<span class=\"\">" + movies_time[(user_date.getDate()%4)].rooms[0].name + "</span>";
+                    time_html += "</label>";
+                    time_html += "<input type=\"radio\" id=\"" + ("0" + time_should_show.getHours().toString()).substr(-2) + ":" + ("0" + time_should_show.getMinutes().toString()).substr(-2) + "\" class=\"d-none\" name=\"time\" value=\"" + ("0" + time_should_show.getHours().toString()).substr(-2) + ":" + ("0" + time_should_show.getMinutes().toString()).substr(-2) + "\" />";
+                    time_html += "</div>";
+                    $("#time").append(time_html);
+
+                    $(".time-select").click(function() {
+                        $(".time-select").removeClass("clicked");
+                        $(this).addClass("clicked");
+                        reload_seat();
+                        $("#masking,#popup,#confirm-seat").fadeIn();
+                    });
+                }
+            }
+
+
+
+
+
+
+            const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+            var today = new Date();
+            
+            function datePrint(currentDate) {
+                $("#dateSelect").html("");
+                var datenew = currentDate;
+
+                for (var d = 0; d < 4; d++) {
+                    var addDateHTML = "<div class=\"d-flex justify-content-center align-items-center flex-column user-select-none mr-md-5\">"+
+                                            "<span class=\"weekday-name text-white d-block text-center mb-3\">" + days[datenew.getDay()] + "</span>"+
+                                            "<label for=\"" + datenew.getFullYear() + "-" + ("0"+(datenew.getMonth()+1).toString()).substr(-2) + "-" + ("0"+datenew.getDate().toString()).substr(-2) + "\" class=\"date-circle border text-center d-flex justify-content-center align-items-center mb-0\">"+
+                                                "<span class=\"mb-0\">" + datenew.getDate() + "</span>"+
+                                            "</label>"+
+                                            "<input type=\"radio\" id=\"" + datenew.getFullYear() + "-" + ("0"+(datenew.getMonth()+1).toString()).substr(-2) + "-" + ("0"+datenew.getDate().toString()).substr(-2) + "\" class=\"d-none\" name=\"date\" value=\"" + datenew.getFullYear() + "-" + ("0"+(datenew.getMonth()+1).toString()).substr(-2) + "-" + ("0"+datenew.getDate().toString()).substr(-2) + "\" />"+
+                                        "</div>";
+                    $("#dateSelect").append(addDateHTML);
+                    datenew.setDate((datenew.getDate() + 1));
+                }
+                $(".date-circle").click(function() {
+                    $(".date-circle").removeClass("active");
+                    $(this).addClass("active");
+                    user_select_date = $(this).attr("for");
+                    loadMovieTime(user_select_date);
+                });
+            }
+            datePrint(today);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            var swiper1_previous_index = 0;
+            var checkSwiper1 = setInterval(function() {
+                if (movies != null && swiper1 != null) {
+                    var now_index = swiper1.activeIndex;
+                    if (swiper1_previous_index != now_index) {
+                        $(".movieSelectRadio").removeAttr("checked");
+                        $(".movieSelectRadio").each(function(index,ele){
+                            if ($(ele).val() == now_index) {
+                                $(ele).attr("checked", "true");
+                            }
+                        });
+                        loadMovieDesc();
+                        if (user_select_date != null) {
+                            loadMovieTime();
+                        }
+                        swiper1_previous_index = now_index;
+                    }
+                }
+            }, 1);
+            
+            
+            // Start of Seat
+            function checkedSeat() {
+                var checkedValue = false;
+                $("label.seat-available.seat-clicked").each(function () {
+                    checkedValue = true;
+                });
+                if (checkedValue) {
+                    $("#confirm-button").addClass("confirm-button-available");
+                }
+                else {
+                    $("#confirm-button").removeClass("confirm-button-available");
+                }
+            }
+            function reload_seat() {
+                $("#seat").html("");
+                $("#confirm-button").removeClass("confirm-button-available");
+                var seat_name_prefix = ["A", "B", "C", "D", "E"];
+                var seat_odd_available = [1,1,0,1,0,1,0,1,0,1,0,0];
+                var seat_even_available = [0,0,1,0,1,0,1,0,1,0,1,1];
+                var seatSOP_html = "<div class=\"seat-circle seat-sop\" title=\"Unavailable due to SOP.\"></div>";
+                for (var r = 0; r < 5; r++) {
+                    var odd_or_even = r%2;
+                    var seat_to_arrange = [];
+                    if (odd_or_even == 1) {
+                        seat_to_arrange = seat_even_available;
+                    }
+                    else {
+                        seat_to_arrange = seat_odd_available;
+                    }
+                    for (var i = 0; i < 12; i++) {
+                        var seat_number = seat_name_prefix[r] + (i+1).toString();
+                        var seat_html = "<label for=\"" + seat_number + "\" class=\"seat-circle seat-available\"></label>";
+                        seat_html += "<input type=\"checkbox\" id=\"" + seat_number + "\" class=\"d-none\" name=\"seat[]\" value=\"" + seat_number + "\" />";
+
+                        var seat_buyed = "<div class=\"seat-circle seat-unavailable\" title=\"Buyed by someone else! Not Available!\"></div>";
+                        if (seat_to_arrange[i] == 1) {
+                            
+                            if (r == 1 && (i == 10 || i == 11)) {
+                                $("#seat").append(seat_buyed);
+                            }
+                            else {
+                                $("#seat").append(seat_html);
+                            }
+                        }
+                        else {
+                            $("#seat").append(seatSOP_html);
+                        }
+                        
+                        if (i == 1 || i == 9) {
+                            var empty_stair_html = "<div class=\"seat-circle\"></div>";
+                            $("#seat").append(empty_stair_html);
+                        }
+                    }
+                }
+                $("label.seat-available").click(function () {
+                    $(this).toggleClass("seat-clicked");
+                    checkedSeat();
+                });
+            }
+            
+            $("#masking,#close-times").click(function () {
+                $("#masking,#popup,#confirm-seat").fadeOut();
+            });
+            // End of Seat
+        });
+    </script>
+</body>
+</html>
