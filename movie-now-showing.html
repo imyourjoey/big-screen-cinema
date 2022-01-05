@@ -15,6 +15,7 @@
     <script src="dist/swiper-7.4.1/js/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/movie-now-showing.css" />
+    <link rel = "icon" href = "image/logo/logo.jpg" type = "image/x-icon">
 </head>
 <body>
     <div id="menu-navbar" class="fixed-top">
@@ -154,8 +155,14 @@
                             <h4 class="text-white text-center text-uppercase user-select-none">Screen</h4>
                         </div>
                     </div>
+
+
+                    <p style="color:white;font-size:12px;margin-top: -19px;font-family:tahoma">Grey Seats &nbsp&nbsp- Available</p>
+                    <p style="color:white;font-size:12px;margin-top: -19px;font-family:tahoma">Yellow Seats - Occupied</p>
+                    <p style="color:white;font-size:12px;margin-top: -19px;font-family:tahoma">Red Seats &nbsp&nbsp&nbsp&nbsp- Unavailable due to SOP</p>
+
                     <div id="seat" class="select-seat-container">
-                        
+
                     </div>
                 </div>
                 <div style="display: none;" id="confirm-seat" class="position-fixed">
@@ -266,7 +273,7 @@
 
 
 
-            
+
 
 
 
@@ -433,7 +440,7 @@
             const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
             var today = new Date();
-            
+
             function datePrint(currentDate) {
                 $("#dateSelect").html("");
                 var datenew = currentDate;
@@ -496,8 +503,8 @@
                     }
                 }
             }, 1);
-            
-            
+
+
             // Start of Seat
             function checkedSeat() {
                 var checkedValue = false;
@@ -534,7 +541,7 @@
 
                         var seat_buyed = "<div class=\"seat-circle seat-unavailable\" title=\"Buyed by someone else! Not Available!\"></div>";
                         if (seat_to_arrange[i] == 1) {
-                            
+
                             if (r == 1 && (i == 10 || i == 11)) {
                                 $("#seat").append(seat_buyed);
                             }
@@ -545,7 +552,7 @@
                         else {
                             $("#seat").append(seatSOP_html);
                         }
-                        
+
                         if (i == 1 || i == 9) {
                             var empty_stair_html = "<div class=\"seat-circle\"></div>";
                             $("#seat").append(empty_stair_html);
@@ -557,7 +564,7 @@
                     checkedSeat();
                 });
             }
-            
+
             $("#masking,#close-times").click(function () {
                 $("#masking,#popup,#confirm-seat").fadeOut();
             });
