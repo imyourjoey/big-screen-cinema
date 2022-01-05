@@ -14,6 +14,7 @@
     <script src="dist/bootstrap-4.6.1/js/bootstrap.min.js"></script>
     <script src="dist/swiper-7.4.1/js/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="css/seat.css" />
+    <link rel = "icon" href = "image/logo/logo.jpg" type = "image/x-icon">
 </head>
 <body>
     <div class="container">
@@ -32,7 +33,7 @@
                     </div>
                 </div>
                 <div id="seat" class="select-seat-container">
-                    
+
                 </div>
             </div>
             <div style="display: none;" id="confirm-seat" class="position-fixed">
@@ -83,7 +84,7 @@
                         else {
                             $("#seat").append(seatSOP_html);
                         }
-                        
+
                         if (i == 1 || i == 9) {
                             var empty_stair_html = "<div class=\"seat-circle\"></div>";
                             $("#seat").append(empty_stair_html);
@@ -95,7 +96,7 @@
                     checkedSeat();
                 });
             }
-            
+
             $("#reload-seat").click(function () {
                 reload_seat();
                 $("#masking,#popup,#confirm-seat").fadeIn();
