@@ -15,6 +15,7 @@
     <script src="dist/swiper-7.4.1/js/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/ticket.css" />
+    <link rel = "icon" href = "image/logo/logo.jpg" type = "image/x-icon">
 </head>
 <body>
     <div id="menu-navbar" class="fixed-top">
@@ -334,7 +335,7 @@
                         $("#ticketInfo").html(ticketInfo);
 
                         var mov_date = new Date(localStorage.getItem("date"));
-                        
+
                         var hall_date_time = "<h5 class=\"text-center\">" + choosen_movie.show_time[mov_date.getDate()%4].rooms[0].name + "</h5>";
                         hall_date_time += "<h5 class=\"text-center\">" + localStorage.getItem("date") + " " + localStorage.getItem("time") + "</h5>";
                         $("#hall-date-time").html(hall_date_time);
